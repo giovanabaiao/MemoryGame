@@ -3,82 +3,82 @@
     {
       "name": "Luke Skywalker",
       "slug": "luke_skywalker",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/3/3d/LukeSkywalker.png"
     },
     {
       "name": "Leia Organa",
       "slug": "leia_organa",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/f/f1/Leia_Organa_TROS.png"
     },
     {
       "name": "Darth Vader",
       "slug": "darth_vader",
-      "url": ""
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Darth_Vader_-_2007_Disney_Weekends.jpg"
     },
     {
       "name": "Anakin Skywalker",
       "slug": "anakin_skywalker",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/6/6f/Anakin_Skywalker_RotS.png"
     },
     {
       "name": "Obi-Wan Kenobi",
       "slug": "obi_wan_kenobi",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/4/4e/ObiWanHS-SWE.jpg"
     },
     {
       "name": "Yoda",
       "slug": "yoda",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/d/d6/Yoda_SWSB.png"
     },
     {
       "name": "Han Solo",
       "slug": "han_solo",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/e/e2/TFAHanSolo.png"
     },
     {
       "name": "Chewbacca",
       "slug": "chewbacca",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/4/48/Chewbacca_TLJ.png"
     },
     {
       "name": "Emperor Palpatine",
       "slug": "emperor_palpatine",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/e/e2/Palpatine-CEUEEd.png"
     },
     {
       "name": "Rey",
       "slug": "rey",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/2/2b/Rey_TROS_Fathead.png"
     },
     {
       "name": "Kylo Ren",
       "slug": "kylo_ren",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/b/bc/KyloRenVFcover-TROS.png"
     },
     {
       "name": "R2-D2",
       "slug": "r2_d2",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/9/95/R2-D2-TROSOCE.png"
     },
     {
       "name": "C-3PO",
       "slug": "c_3po",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/a/a2/C-3PO-TROSTGG.png"
     },
     {
       "name": "Lando Calrissian",
       "slug": "lando_calrissian",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/2/29/LandoCalrissian-TROSOCE.png"
     },
     {
       "name": "Mandalorian",
       "slug": "mandalorian",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/4/46/DinDjarinArmor-CGSWG.png"
     },
     {
       "name": "Padme Amidala",
       "slug": "padme_amidala",
-      "url": ""
+      "url": "https://static.wikia.nocookie.net/starwars/images/b/b2/Padmegreenscrshot.jpg"
     }
   ]
 }

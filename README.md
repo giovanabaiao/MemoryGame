@@ -91,6 +91,11 @@ cmake --build build --config Release
 ## 1) Add source URLs
 Edit `/Users/gigi/Programming/MemoryGame/assets/manifest/sources.json` and fill each `url`.
 
+Or auto-populate Star Wars character URLs from Wookieepedia:
+```bash
+python tools/populate_sources_wookieepedia.py
+```
+
 ## 2) Download originals
 ```bash
 python tools/fetch_assets.py
