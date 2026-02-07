@@ -1,0 +1,20 @@
+{
+  "cards": [
+    { "name": "Luke Skywalker", "slug": "luke_skywalker", "processed": "assets/processed/luke_skywalker.png" },
+    { "name": "Leia Organa", "slug": "leia_organa", "processed": "assets/processed/leia_organa.png" },
+    { "name": "Darth Vader", "slug": "darth_vader", "processed": "assets/processed/darth_vader.png" },
+    { "name": "Anakin Skywalker", "slug": "anakin_skywalker", "processed": "assets/processed/anakin_skywalker.png" },
+    { "name": "Obi-Wan Kenobi", "slug": "obi_wan_kenobi", "processed": "assets/processed/obi_wan_kenobi.png" },
+    { "name": "Yoda", "slug": "yoda", "processed": "assets/processed/yoda.png" },
+    { "name": "Han Solo", "slug": "han_solo", "processed": "assets/processed/han_solo.png" },
+    { "name": "Chewbacca", "slug": "chewbacca", "processed": "assets/processed/chewbacca.png" },
+    { "name": "Emperor Palpatine", "slug": "emperor_palpatine", "processed": "assets/processed/emperor_palpatine.png" },
+    { "name": "Rey", "slug": "rey", "processed": "assets/processed/rey.png" },
+    { "name": "Kylo Ren", "slug": "kylo_ren", "processed": "assets/processed/kylo_ren.png" },
+    { "name": "R2-D2", "slug": "r2_d2", "processed": "assets/processed/r2_d2.png" },
+    { "name": "C-3PO", "slug": "c_3po", "processed": "assets/processed/c_3po.png" },
+    { "name": "Lando Calrissian", "slug": "lando_calrissian", "processed": "assets/processed/lando_calrissian.png" },
+    { "name": "Mandalorian", "slug": "mandalorian", "processed": "assets/processed/mandalorian.png" },
+    { "name": "Padme Amidala", "slug": "padme_amidala", "processed": "assets/processed/padme_amidala.png" }
+  ]
+}

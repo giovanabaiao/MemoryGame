@@ -1,0 +1,84 @@
+{
+  "cards": [
+    {
+      "name": "Luke Skywalker",
+      "slug": "luke_skywalker",
+      "url": ""
+    },
+    {
+      "name": "Leia Organa",
+      "slug": "leia_organa",
+      "url": ""
+    },
+    {
+      "name": "Darth Vader",
+      "slug": "darth_vader",
+      "url": ""
+    },
+    {
+      "name": "Anakin Skywalker",
+      "slug": "anakin_skywalker",
+      "url": ""
+    },
+    {
+      "name": "Obi-Wan Kenobi",
+      "slug": "obi_wan_kenobi",
+      "url": ""
+    },
+    {
+      "name": "Yoda",
+      "slug": "yoda",
+      "url": ""
+    },
+    {
+      "name": "Han Solo",
+      "slug": "han_solo",
+      "url": ""
+    },
+    {
+      "name": "Chewbacca",
+      "slug": "chewbacca",
+      "url": ""
+    },
+    {
+      "name": "Emperor Palpatine",
+      "slug": "emperor_palpatine",
+      "url": ""
+    },
+    {
+      "name": "Rey",
+      "slug": "rey",
+      "url": ""
+    },
+    {
+      "name": "Kylo Ren",
+      "slug": "kylo_ren",
+      "url": ""
+    },
+    {
+      "name": "R2-D2",
+      "slug": "r2_d2",
+      "url": ""
+    },
+    {
+      "name": "C-3PO",
+      "slug": "c_3po",
+      "url": ""
+    },
+    {
+      "name": "Lando Calrissian",
+      "slug": "lando_calrissian",
+      "url": ""
+    },
+    {
+      "name": "Mandalorian",
+      "slug": "mandalorian",
+      "url": ""
+    },
+    {
+      "name": "Padme Amidala",
+      "slug": "padme_amidala",
+      "url": ""
+    }
+  ]
+}

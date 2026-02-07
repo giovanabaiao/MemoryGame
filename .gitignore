@@ -1,0 +1,10 @@
+build/
+build-*/
+dist/
+.DS_Store
+
+# Local generated asset files
+assets/source/*
+!assets/source/.gitkeep
+assets/processed/*
+!assets/processed/.gitkeep

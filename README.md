@@ -1,124 +1,144 @@
 # Star Wars Memory Game (C++ / SFML 3.x)
 
-A 2D full-screen memory game built in C++ with SFML 3.x.  
-The board is a single-screen 8x4 grid (32 cards total) with 16 Star Wars character pairs, flip animations, a 2-second reveal window, timer, move counter, and a New Game button.
+2D full-screen memory game built in C++ with SFML 3.x.
 
-## Features
-- 2D single-screen gameplay.
-- 8x4 card grid (16 pairs).
-- Flip-on-click animation.
-- 2-second reveal period before pair resolution.
-- Move counter + elapsed timer.
-- Full-screen responsive layout with proportional scaling.
-- Pixel-art styled character card faces.
-- Cross-platform target: macOS + Windows.
+Current implementation includes:
+- Single-screen 8x4 grid (32 cards, 16 pairs)
+- Flip animation
+- 2-second reveal window for each pair selection
+- Matched cards disappear
+- Timer and move counter
+- New Game button
+- Responsive full-screen layout for multiple resolutions
+- Asset pipeline scripts for downloading and processing card art
 
-## Tech Stack
-- C++17 or newer
-- [SFML 3.x](https://www.sfml-dev.org/)
+## Requirements
 - CMake 3.24+
-- Optional for asset tooling:
-  - Python 3.10+
-  - Pillow (`pip install pillow`)
+- C++20 compiler
+- SFML 3.x
+- Python 3.10+ (for asset scripts)
+- Pillow (`pip install pillow`) for `tools/process_assets.py`
 
-## Project Layout
-```text
-MemoryGame/
-  README.md
-  DETAILED_PLAN.md
-  CMakeLists.txt
-  src/
-  assets/
-    manifest/
-    source/
-    processed/
-    ui/
-  tools/
+## Setup
+
+## Quick Start Script
+From project root:
+```bash
+./run_game.sh
 ```
 
-## Dependencies and Setup
+Useful options:
+```bash
+./run_game.sh --no-run
+./run_game.sh --debug
+./run_game.sh --fetch-sfml
+```
 
 ## macOS
-
-### Option A: Homebrew (simple local setup)
-1. Install Xcode Command Line Tools:
+1. Install toolchain:
    ```bash
    xcode-select --install
+   brew install cmake sfml python
    ```
-2. Install dependencies:
+2. Configure and build:
    ```bash
-   brew install cmake sfml
+   cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+   cmake --build build --config Release
    ```
-3. Verify:
+3. Run:
    ```bash
-   cmake --version
+   ./build/bin/memory_game
    ```
 
-### Option B: Build SFML 3.x from source (strict version control)
-1. Install build tools:
-   ```bash
-   brew install cmake ninja
-   ```
-2. Clone SFML and build/install it (example path under `/usr/local` or your custom prefix).
-3. Configure this project with `-DSFML_DIR=<path-to-sfml-cmake-config>`.
+If your SFML 3 install is custom:
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DSFML_DIR=/path/to/SFML/lib/cmake/SFML
+```
 
 ## Windows
 
 ### Option A: vcpkg (recommended)
-1. Install Visual Studio 2022 with C++ workload.
-2. Install [vcpkg](https://github.com/microsoft/vcpkg).
-3. Install SFML:
+1. Install Visual Studio 2022 (Desktop development with C++).
+2. Install [vcpkg](https://github.com/microsoft/vcpkg) and SFML:
    ```powershell
    vcpkg install sfml
    ```
-4. Build project with vcpkg toolchain:
+3. Configure and build:
    ```powershell
    cmake -S . -B build -DCMAKE_TOOLCHAIN_FILE=C:/path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
    cmake --build build --config Release
    ```
-
-### Option B: Prebuilt SFML binaries
-1. Download matching SFML 3.x binaries for your compiler/runtime.
-2. Point CMake to SFML config:
+4. Run:
    ```powershell
-   cmake -S . -B build -DSFML_DIR=C:/path/to/SFML/lib/cmake/SFML
-   cmake --build build --config Release
+   .\build\bin\Release\memory_game.exe
    ```
 
-## Build Instructions (Both Platforms)
-
-From project root:
-```bash
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+### Option B: Prebuilt/custom SFML
+```powershell
+cmake -S . -B build -DSFML_DIR=C:/path/to/SFML/lib/cmake/SFML
 cmake --build build --config Release
 ```
 
-Run executable from the build output directory (path depends on generator and OS).
-
-## CMake Integration Notes
-- In `CMakeLists.txt`, target SFML 3:
-  - `find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System Audio)`
-- Link your game target with SFML imported targets.
-- Keep runtime assets (`assets/`) accessible from working directory or copy them post-build.
+## Optional: Fetch SFML From CMake
+If SFML is not installed globally:
+```bash
+cmake -S . -B build -DMEMORY_GAME_FETCH_SFML=ON
+cmake --build build --config Release
+```
 
 ## Asset Pipeline (Pixel Art)
 
-This project is designed to use script-based asset preparation:
-1. Download original source images for each character into `assets/source/`.
-2. Convert and normalize into pixel-art-style PNG files in `assets/processed/`.
-3. Load textures through a manifest (`assets/manifest/cards.json`) to keep data-driven mapping.
+## 1) Add source URLs
+Edit `/Users/gigi/Programming/MemoryGame/assets/manifest/sources.json` and fill each `url`.
 
-Planned scripts:
-- `tools/fetch_assets.py` - downloads originals from a manifest URL list.
-- `tools/process_assets.py` - crops/resizes/quantizes and exports final PNGs.
+## 2) Download originals
+```bash
+python tools/fetch_assets.py
+```
 
-## Gameplay Rules (Planned)
-- Click a face-down card to flip it.
-- Select a second card to form a move.
-- Both cards remain visible for 2 seconds.
-- Matching pair disappears, non-matching pair flips back.
-- Game ends when all 16 pairs are matched.
+## 3) Process to pixel-art PNG
+```bash
+python tools/process_assets.py --contact-sheet
+```
 
-## Notes
-- Character names and content are part of a Star Wars themed fan project; confirm image usage rights before distribution.
-- See `DETAILED_PLAN.md` for full architecture, milestones, and implementation details.
+Generated files go to:
+- `/Users/gigi/Programming/MemoryGame/assets/source`
+- `/Users/gigi/Programming/MemoryGame/assets/processed`
+
+The game auto-loads processed textures from:
+- `/Users/gigi/Programming/MemoryGame/assets/processed/<slug>.png`
+
+If textures are missing, fallback colored cards are used so the game is still playable.
+
+## Fonts
+For consistent pixel-art text, add a font file at:
+- `/Users/gigi/Programming/MemoryGame/assets/fonts/PressStart2P-Regular.ttf`
+
+The game also tries common system fonts on macOS/Windows.
+
+## Controls
+- Left click: flip card / press New Game
+- Escape: quit game
+
+## Project Files
+- `/Users/gigi/Programming/MemoryGame/src/main.cpp` - current game implementation
+- `/Users/gigi/Programming/MemoryGame/CMakeLists.txt` - build config
+- `/Users/gigi/Programming/MemoryGame/DETAILED_PLAN.md` - long-form development plan
+- `/Users/gigi/Programming/MemoryGame/tools/fetch_assets.py` - source image downloader
+- `/Users/gigi/Programming/MemoryGame/tools/process_assets.py` - pixel-art converter
+
+## Contributing
+1. Create a branch:
+   ```bash
+   git checkout -b codex/<topic>
+   ```
+2. Keep changes focused.
+3. Build and run locally.
+4. Update docs if behavior/build steps change.
+5. Open a PR with:
+   - What changed
+   - Why it changed
+   - How you tested (platform + commands)
+
+## Licensing and IP Note
+This is a Star Wars fan project. Ensure image sources and redistribution rights are valid before publishing binaries/assets.
